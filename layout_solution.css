@@ -1,0 +1,102 @@
+@charset "utf-8";
+
+/*
+   Case Study 2: Designing a Page Layout with CSS Floats
+   Trailhead Coffee Roasters — Brew Guide
+   Filename: layout.css
+*/
+
+/* ---------- Reset: a consistent starting point ---------- */
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;   /* width includes padding + border */
+}
+header, nav, main, aside, footer, article {
+   display: block;           /* treat HTML5 structural elements as blocks */
+}
+
+/* ---------- Base typography ---------- */
+body {
+   font-family: Verdana, Geneva, sans-serif;
+   color: rgb(74, 60, 50);
+   background-color: hsl(28, 40%, 68%);
+   line-height: 1.5em;
+}
+
+/* ---------- Centered page container (fluid) ---------- */
+.page {
+   width: 94%;
+   max-width: 960px;
+   min-width: 620px;
+   margin: 0 auto;            /* auto left + right margins center the block */
+   background-color: rgb(250, 245, 238);
+}
+
+/* ---------- Header ---------- */
+header {
+   background-color: rgb(59, 38, 26);
+   padding: 16px 24px;
+}
+header img { display: block; }
+header .tagline {
+   color: rgb(222, 184, 135);
+   font-style: italic;
+   margin-top: 6px;
+}
+
+/* ---------- Three-column float layout ---------- */
+nav {
+   float: left;
+   width: 22%;
+   padding: 16px;
+}
+main {
+   float: left;
+   width: 53%;
+   padding: 16px;
+}
+aside {
+   float: left;
+   width: 25%;
+   padding: 16px;
+   background-color: rgb(240, 230, 220);
+}
+
+/* ---------- Clearfix: make .columns contain its floats ---------- */
+.columns::after {
+   content: "";
+   display: table;
+   clear: both;
+}
+
+/* ---------- Footer sits below the floated columns ---------- */
+footer {
+   clear: both;
+   background-color: rgb(59, 38, 26);
+   color: rgb(250, 245, 238);
+   text-align: center;
+   padding: 12px;
+}
+
+/* ---------- Headings, lists, links ---------- */
+h1 {
+   font-family: "Trebuchet MS", Verdana, sans-serif;
+   font-size: 1.8em;
+   color: rgb(59, 38, 26);
+   margin-bottom: 8px;
+}
+h2 {
+   font-family: "Trebuchet MS", Verdana, sans-serif;
+   font-size: 1.2em;
+   color: rgb(150, 96, 58);
+   margin: 14px 0 6px;
+}
+main p { margin-bottom: 10px; }
+
+nav ul { list-style-type: none; line-height: 2em; }
+nav a:link, nav a:visited { color: rgb(120, 110, 100); text-decoration: none; }
+nav a:hover, nav a:active { color: rgb(0, 150, 136); text-decoration: underline; }
+nav li.newgroup { margin-top: 14px; }
+
+aside .quote { font-style: italic; color: rgb(52, 120, 120); margin-top: 10px; }

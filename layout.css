@@ -1,0 +1,119 @@
+@charset "utf-8";
+
+/*
+   Case Study 2 — Designing a Page Layout with CSS Floats
+   Trailhead Coffee Roasters — Brew Guide
+   Author: [Your Name]
+   Filename: layout.css
+
+   Build this file stage by stage, following the case study guide.
+*/
+/* 
+   Custom Layout CSS using CSS Floats & Box Model 
+*/
+
+body {
+   font-family: Arial, sans-serif;
+   background-color: #f4f6f8;
+   color: #2c3e50;
+   margin: 0;
+   padding: 20px;
+}
+
+.page {
+   max-width: 1000px;
+   margin: 0 auto;
+   background: #ffffff;
+   padding: 20px;
+   border-radius: 8px;
+   box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+header {
+   text-align: center;
+   border-bottom: 2px solid #e2e8f0;
+   padding-bottom: 15px;
+   margin-bottom: 20px;
+}
+
+header img {
+   max-height: 60px;
+}
+
+.tagline {
+   font-style: italic;
+   color: #64748b;
+}
+
+/* Float-based Column Layout */
+.columns::after {
+   content: "";
+   display: table;
+   clear: both;
+}
+
+nav {
+   float: left;
+   width: 20%;
+   background: #f8fafc;
+   padding: 15px;
+   box-sizing: border-box;
+   border-radius: 4px;
+}
+
+nav ul {
+   list-style-type: none;
+   padding: 0;
+   margin: 0;
+}
+
+nav li {
+   margin-bottom: 10px;
+}
+
+nav a {
+   text-decoration: none;
+   color: #0284c7;
+}
+
+nav a:hover {
+   text-decoration: underline;
+}
+
+nav .newgroup {
+   margin-top: 20px;
+   border-top: 1px solid #cbd5e1;
+   padding-top: 10px;
+}
+
+main {
+   float: left;
+   width: 55%;
+   padding: 0 20px;
+   box-sizing: border-box;
+}
+
+aside {
+   float: right;
+   width: 25%;
+   background: #f0fdf4;
+   border-left: 4px solid #22c55e;
+   padding: 15px;
+   box-sizing: border-box;
+   border-radius: 4px;
+}
+
+footer {
+   clear: both;
+   text-align: center;
+   margin-top: 30px;
+   border-top: 1px solid #e2e8f0;
+   padding-top: 15px;
+   font-size: 0.85rem;
+   color: #64748b;
+}
+
+.quote {
+   font-weight: bold;
+   color: #166534;
+}
